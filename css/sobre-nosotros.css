@@ -179,6 +179,56 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.team-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(220, 27, 83, 0.3);
+}
+
+.team-member-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #FFC107;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.team-member-role {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #DC1B53;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.team-member-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: row;
@@ -219,4 +269,25 @@ body {
     .about-us-img, .about-us-text {
         width: 100%;
     }
+}
+.back-button {
+    display: inline-block;
+    background-color: #DC1B53;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 27, 83, 0.4);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    float: left;
+}
+
+.back-button:hover {
+    background-color: #a81541;
+    transform: translateY(-2px);
 }

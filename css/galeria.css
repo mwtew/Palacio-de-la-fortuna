@@ -111,64 +111,89 @@ body {
 
 .main-content {
     padding-top: 150px;
+    padding-bottom: 80px;
 }
 
-.about-us-section {
-    padding: 80px 0;
+.gallery-section {
     text-align: center;
-}
-
-.about-us-content {
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-us-img {
-    width: 50%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.about-us-text {
-    width: 50%;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: left;
+    padding: 80px 0;
 }
 
 .section-title {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: #FFC107;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.bitacoras-section {
-    text-align: center;
-    padding: 80px 0;
+.gallery-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #FFC107;
+    text-align: left;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #DC1B53;
+    padding-bottom: 0.5rem;
 }
 
-.bitacora-person-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #FFC107;
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.media-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.media-card:hover {
+    transform: translateY(-5px);
+}
+
+.media-card img, .media-card video {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
     margin-bottom: 1rem;
 }
 
-.canva-link {
-    color: #FFC107;
-    text-decoration: none;
+.media-caption {
+    font-size: 1rem;
+    color: #ccc;
     font-weight: 700;
-    transition: color 0.3s;
+    margin: 0;
 }
 
-.canva-link:hover {
-    color: #DC1B53;
+.back-button {
+    display: inline-block;
+    background-color: #DC1B53;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 27, 83, 0.4);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    float: left;
+}
+
+.back-button:hover {
+    background-color: #a81541;
+    transform: translateY(-2px);
 }
 
 .footer {
@@ -177,6 +202,8 @@ body {
     text-align: center;
     padding: 1.5rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -211,12 +238,5 @@ body {
 
     .hamburger {
         display: block;
-    }
-
-    .about-us-content {
-        flex-direction: column;
-    }
-    .about-us-img, .about-us-text {
-        width: 100%;
     }
 }
