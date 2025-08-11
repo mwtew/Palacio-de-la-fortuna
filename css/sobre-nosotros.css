@@ -128,7 +128,7 @@ body {
 .about-us-img {
     width: 50%;
     max-width: 500px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 

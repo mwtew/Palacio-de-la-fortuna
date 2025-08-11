@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palacio de la Fortuna - Galería</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/logo_casino.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/logo_casino.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/logo_casino.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/galeria.css">
 </head>
@@ -11,7 +14,7 @@
 
     <div class="background-video-container">
         <video autoplay loop muted playsinline class="background-video">
-            <source src="../img/fondo.webp" type="video/mp4">
+            <source src="../img/fondo.mp4" type="video/mp4">
             Tu navegador no soporta el elemento de video.
         </video>
         <div class="background-overlay"></div>
@@ -63,41 +66,43 @@
                     <img src="../img/coinfliplogo.png" alt="Logo de Coin Flip">
                     <p class="media-caption">Logo Coin Flip</p>
                 </div>
-                <div class="media-card">
-                    <img src="https://placehold.co/400x300/2a2a2a/ffffff?text=Imagen+del+Casino" alt="Imagen placeholder del casino">
-                    <p class="media-caption">Imagen "Sobre Nosotros"</p>
-                </div>
             </div>
 
             <h3 class="gallery-subtitle">Videos Usados</h3>
             <div class="media-grid">
                 <div class="media-card">
                     <video loop muted controls playsinline>
-                        <source src="../img/fondo.webp" type="video/mp4">
+                        <source src="../img/fondo.mp4" type="video/mp4">
                     </video>
                     <p class="media-caption">Video de Fondo</p>
                 </div>
                 <div class="media-card">
                     <video loop muted controls playsinline>
-                        <source src="../videos/ruleta.mp4" type="video/mp4">
+                        <source src="../img/Casinopantalla.mp4" type="video/mp4">
+                    </video>
+                    <p class="media-caption">Video "Sobre Nosotros"</p>
+                </div>
+                <div class="media-card">
+                    <video loop muted controls playsinline>
+                        <source src="../img/Ruleta.mp4" type="video/mp4">
                     </video>
                     <p class="media-caption">Video Ruleta</p>
                 </div>
                 <div class="media-card">
                     <video loop muted controls playsinline>
-                        <source src="../videos/blackjack.mp4" type="video/mp4">
+                        <source src="../img/blackjack.mp4" type="video/mp4">
                     </video>
                     <p class="media-caption">Video Blackjack</p>
                 </div>
                 <div class="media-card">
                     <video loop muted controls playsinline>
-                        <source src="../videos/tragamonedas.mp4" type="video/mp4">
+                        <source src="../img/Ruleta.mp4" type="video/mp4">
                     </video>
                     <p class="media-caption">Video Tragamonedas</p>
                 </div>
                  <div class="media-card">
                     <video loop muted controls playsinline>
-                        <source src="../videos/coinflip.mp4" type="video/mp4">
+                        <source src="../img/coinflip.mp4" type="video/mp4">
                     </video>
                     <p class="media-caption">Video Coin Flip</p>
                 </div>
@@ -111,6 +116,11 @@
             <p>© 2025 Palacio de la Fortuna. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <div id="lightbox-overlay" class="lightbox-overlay hidden">
+        <img id="lightbox-image" src="" alt="Imagen ampliada">
+        <p class="lightbox-message">Toca en cualquier parte para salir</p>
+    </div>
     
     <script src="../js/galeria.js"></script>
     <script>
