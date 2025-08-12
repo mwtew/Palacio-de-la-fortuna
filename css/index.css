@@ -325,4 +325,90 @@ body {
 .back-button:hover {
     background-color: #a81541;
     transform: translateY(-2px);
+<<<<<<< HEAD
+}
+
+.ranking-container {
+    background-color: rgba(10, 0, 20, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.ranking-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        rgba(255, 193, 7, 0.8),
+        rgba(220, 27, 83, 0.8),
+        transparent 30%
+    );
+    animation: rotate 6s linear infinite;
+}
+
+.ranking-container > * {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.ranking-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #FFC107;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ranking-table th, .ranking-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.ranking-table th {
+    color: #FFC107;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.ranking-table td {
+    color: #eee;
+    font-size: 1.1rem;
+}
+
+.ranking-table tr:last-child td {
+    border-bottom: none;
+}
+
+.ranking-table td:first-child {
+    font-weight: bold;
+    color: #DC1B53;
+    font-size: 1.5rem;
+    text-align: center;
+=======
+>>>>>>> 1ec1b693e1a567f053c5f19984a9321362f9e65c
 }
