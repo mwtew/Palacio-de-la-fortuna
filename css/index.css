@@ -325,7 +325,6 @@ body {
 .back-button:hover {
     background-color: #a81541;
     transform: translateY(-2px);
-<<<<<<< HEAD
 }
 
 .ranking-container {
@@ -409,6 +408,4 @@ body {
     color: #DC1B53;
     font-size: 1.5rem;
     text-align: center;
-=======
->>>>>>> 1ec1b693e1a567f053c5f19984a9321362f9e65c
 }
