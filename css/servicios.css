@@ -23,7 +23,13 @@ body {
     z-index: 1000;
     transition: all 0.3s ease-in-out;
     padding: 1.5rem 0;
-    border-bottom: 1px solid rgba(255, 193, 7, 0.1);
+}
+.header.scrolled {
+    padding: 0.5rem 0;
+    transform: translateY(-100%);
+}
+.header.scrolled.up {
+    transform: translateY(0);
 }
 .header-content {
     display: flex;
@@ -36,12 +42,15 @@ body {
     gap: 1rem;
     text-decoration: none;
 }
-.logo-img { height: 50px; }
+.logo-img {
+    height: 50px;
+}
 .site-title {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     color: #FFC107;
     margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .main-nav ul {
     list-style: none;
@@ -54,8 +63,19 @@ body {
     text-decoration: none;
     color: #fff;
     font-weight: 700;
+    transition: color 0.3s;
 }
-.hamburger { display: none; }
+.main-nav a:hover {
+    color: #FFC107;
+}
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 .background-video-container {
     position: fixed;
     top: 0;
@@ -78,7 +98,9 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
 }
-.main-content { padding-top: 150px; }
+.main-content {
+    padding-top: 150px;
+}
 .services-section {
     text-align: center;
     padding: 80px 0;
@@ -89,6 +111,7 @@ body {
     text-align: center;
     margin-bottom: 1rem;
     color: #FFC107;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .section-subtitle {
     text-align: center;
@@ -99,15 +122,21 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    padding: 0 1rem;
 }
 .game-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+.game-card:hover {
+    transform: translateY(-5px);
 }
 .game-title {
     font-family: 'Playfair Display', serif;
@@ -127,11 +156,20 @@ body {
     height: 100%;
     object-fit: cover;
 }
+.game-details {
+    text-align: left;
+}
 .game-details h4 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: #FFC107;
     margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.game-details p, .game-details ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
 }
 .game-details ul {
     list-style-type: none;
@@ -153,6 +191,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .back-button {
+    display: inline-block;
     background-color: #DC1B53;
     color: #fff;
     padding: 0.75rem 1.5rem;
@@ -160,35 +199,44 @@ body {
     border-radius: 5px;
     font-weight: 700;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 27, 83, 0.4);
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     margin-bottom: 2rem;
     float: left;
 }
+.back-button:hover {
+    background-color: #a81541;
+    transform: translateY(-2px);
+}
 @media (max-width: 768px) {
-    .container {
-        width: 100%;
-        padding: 0 1.5rem;
-    }
     .main-nav {
-        display: flex;
         position: fixed;
         top: 0;
         right: 0;
         width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
         backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transform: translateX(100%);
         transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        z-index: 1001;
+        z-index: 1000;
+        display: flex;
     }
-    .main-nav.active { transform: translateX(0); }
-    .main-nav ul { flex-direction: column; gap: 1.5rem; }
-    .main-nav a { font-size: 1.8rem; }
+    .main-nav.active {
+        transform: translateX(0);
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .main-nav a {
+        font-size: 1.8rem;
+    }
     .hamburger {
         display: block;
         position: relative;
@@ -196,7 +244,7 @@ body {
         height: 40px;
         border: none;
         background: transparent;
-        z-index: 1002;
+        z-index: 1001;
     }
     .hamburger-box {
         position: absolute;
@@ -210,14 +258,16 @@ body {
         background-color: #FFC107;
         border-radius: 4px;
         position: absolute;
-        transition: all .25s ease-in-out;
+        transition: transform .25s ease-in-out, background-color .25s ease-in-out;
     }
     .hamburger-inner { top: 50%; transform: translateY(-50%); }
     .hamburger-inner::before, .hamburger-inner::after { content: ''; display: block; }
     .hamburger-inner::before { top: -10px; }
     .hamburger-inner::after { bottom: -10px; }
     .hamburger.is-active .hamburger-inner { transform: rotate(45deg); background-color: #fff; }
-    .hamburger.is-active .hamburger-inner::before { top: 0; transform: rotate(-90deg); background-color: #fff; }
+    .hamburger.is-active .hamburger-inner::before { transform: rotate(-90deg) translate(-10px, 0px); background-color: #fff;}
     .hamburger.is-active .hamburger-inner::after { opacity: 0; }
-    .games-grid { grid-template-columns: 1fr; }
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
 }
