@@ -18,7 +18,7 @@ if ($conexion->connect_error) {
 }
 
 // --- CONSULTA SQL CORREGIDA ---
-// Ahora se ordena por el 'id' de la partida para asegurar que sean las últimas.
+
 $sql = "
     SELECT 
         u.usuario, 
